@@ -17,6 +17,8 @@ export class Snipcart {
 
     if (!this.options.apiKey) throw new Error('No API key provided.')
 
+    const btoa = (obj: string) => Buffer.from(obj).toString('base64')
+
     this.axiosInstance = axios.create({
       baseURL: this.options.endpoint,
       timeout: this.options.timeout,
