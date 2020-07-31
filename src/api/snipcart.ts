@@ -29,8 +29,12 @@ export class Snipcart {
     })
   }
 
-  orders = () => new Orders(this.axiosInstance)
-  customers = () => new Customers(this.axiosInstance)
+  get orders() {
+    return new Orders(this.axiosInstance)
+  }
+  get customers() {
+    return new Customers(this.axiosInstance)
+  }
 
   /**
    * Returns the default configuration for Airtable
