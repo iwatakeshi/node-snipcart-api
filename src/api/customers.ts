@@ -48,17 +48,16 @@ export class Customers {
    * @param params
    */
   find = (params: Partial<FindQueryParams> = { limit: 20, offset: 0 }) =>
-    this.axios.get<FindResponse>('/customers', { params })
+    this.axios.get<FindResponse>('customers', { params })
 
   /**
    * This method returns a specific customer
    * @param id The customer unique ID.
    */
-  findOne = (id: string) => this.axios.get<Customer>(`/customers/${id}`)
+  findOne = (id: string) => this.axios.get<Customer>(`customers/${id}`)
 
   /**
    * This methods returns a list of orders
    */
-  orders = (id: string) =>
-    this.axios.get<OrderItem[]>(`/customers/${id}/orders`)
+  orders = (id: string) => this.axios.get<OrderItem[]>(`customers/${id}/orders`)
 }

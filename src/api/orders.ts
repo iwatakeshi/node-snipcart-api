@@ -90,7 +90,7 @@ export class Orders {
    * @param params
    */
   find = (params: Partial<FindQueryParams> = { limit: 20, offset: 0 }) =>
-    this.axios.get<FindResponse>('/orders', {
+    this.axios.get<FindResponse>('orders', {
       params,
     })
   /**
@@ -98,7 +98,7 @@ export class Orders {
    * @param token
    */
   findOne = (token: string, params: Partial<FindOneQueryParms> = {}) =>
-    this.axios.get<OrderItem>(`/orders/${token}`, {
+    this.axios.get<OrderItem>(`orders/${token}`, {
       params,
     })
   /**
@@ -112,7 +112,7 @@ export class Orders {
    * @param params
    */
   update = (token: string, params: Partial<UpdateQueryParams> = {}) =>
-    this.axios.put<OrderItem>(`/orders/${token}`, {
+    this.axios.put<OrderItem>(`orders/${token}`, {
       params,
     })
 }
