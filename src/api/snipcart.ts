@@ -40,8 +40,8 @@ export class Snipcart {
    * Returns the default configuration for Airtable
    */
   static defaultOptions = (): Partial<SnipcartOptions> => ({
-    endpoint: process?.env?.SNIPCART_ENDPOINT || 'https://app.snipcart.com/api',
-    apiKey: process?.env?.SNIPCART_API_KEY,
+    endpoint: process.env.SNIPCART_ENDPOINT || 'https://app.snipcart.com/api',
+    apiKey: process.env.SNIPCART_API_KEY,
     timeout: 300 * 1000, // 5 minutes
   })
 }
