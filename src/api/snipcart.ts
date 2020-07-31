@@ -1,6 +1,7 @@
 import merge from 'lodash/merge'
 import { Orders } from './orders'
 import axios, { AxiosInstance } from 'axios'
+import { Customers } from './customers'
 
 export type SnipcartOptions = {
   endpoint: string
@@ -27,6 +28,7 @@ export class Snipcart {
   }
 
   orders = () => new Orders(this.axiosInstance)
+  customers = () => new Customers(this.axiosInstance)
 
   /**
    * Returns the default configuration for Airtable
