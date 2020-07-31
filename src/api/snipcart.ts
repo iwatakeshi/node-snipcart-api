@@ -23,7 +23,7 @@ export class Snipcart {
       baseURL: this.options.endpoint,
       timeout: this.options.timeout,
       headers: {
-        Authorization: `Bearer ${btoa(this.options.apiKey)}`,
+        Authorization: `Basic ${btoa(this.options.apiKey)}`,
         Accept: 'application/json',
       },
     })
