@@ -1,3 +1,8 @@
+export type CustomField = {
+  name: string
+  value: any
+}
+
 export type OrderItem = {
   token: string
   creationDate: string
@@ -35,10 +40,7 @@ export type OrderItem = {
   taxes: Tax[]
   promocodes: PromoCodes[]
   willBePaidLater: boolean
-  customFields: {
-    name: string
-    value: any
-  }[]
+  customFields: CustomField[]
   paymentTransactionId?: string
 }
 
@@ -52,11 +54,43 @@ export type LineItem = {
   weight: number
   description: string
   image: string
-  customFieldsJson: string
+  customFields: CustomField[]
   stackable: boolean
   maxQuantity?: number
   totalPrice: number
   totalWeight: number
+
+  paymentSchedule: {
+    interval: 'Day' | 'Week' | 'Month' | 'Year'
+    intervalCount: number
+    trialPeriodInDays?: number
+    startsOn: string
+  }
+  pausingAction: string
+  cancellationAction: string
+  startsOn: string
+  token: string
+  fileGuid?: string
+  initialData: string
+  categories: any[]
+  totalPriceWithoutTaxes: number
+  originalPrice?: string
+  minQuantity: number
+  addedOn: string
+  modificationDate: string
+  shippable: boolean
+  taxable: boolean
+  duplicatable: boolean
+  width?: number
+  height?: number
+  length?: number
+  metadata?: Record<string, any>
+  taxes: any[]
+  alternatePrices: any
+  unitPrice: number
+  hasDimensions: boolean
+  hasTaxesIncluded: boolean
+  totalPriceWithoutDiscountsAndTaxes: number
 }
 
 export type PromoCodes = {
