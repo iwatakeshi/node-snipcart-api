@@ -2,8 +2,8 @@
   "name": "snipcart-api",
   "version": "0.0.9",
   "description": "implementation of the snipcart api",
-  "main": "dist/src/index.js",
-  "type": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",
